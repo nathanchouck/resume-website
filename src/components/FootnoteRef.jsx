@@ -1,6 +1,6 @@
 "use client";
 
-import { JETBRAINS_MONO } from "@/utils/constants";
+import { SANS } from "@/utils/constants";
 
 export default function FootnoteRef({ n }) {
   const handleClick = (e) => {
@@ -15,7 +15,7 @@ export default function FootnoteRef({ n }) {
     <a
       href={`#ref-${n}`}
       onClick={handleClick}
-      className={`${JETBRAINS_MONO.className} text-[10px] text-(--accent) bg-(--accent)/10 hover:bg-(--accent)/20 px-1 rounded transition-colors cursor-pointer not-italic align-super leading-none`}
+      className={`${SANS.className} text-[10px] font-medium text-(--active) bg-(--active)/10 hover:bg-(--active)/20 px-1 transition-colors cursor-pointer align-super leading-none`}
     >
       [{n}]
     </a>

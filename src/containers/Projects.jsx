@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "motion/react";
-import { slideUp, staggerParent } from "@/utils/animations";
-import { JETBRAINS_MONO, PROJECTS_INFO, SOURCE_SERIF } from "@/utils/constants";
+import { PROJECTS_INFO, SANS, SERIF } from "@/utils/constants";
+import PageTitle from "@/components/PageTitle";
 
 const CATEGORIES = ["All", "Research", "Team", "Patent"];
 
@@ -15,61 +14,68 @@ function renderBold(text) {
   );
 }
 
-function ImagePlaceholder() {
+function ProjectEntry({ project, index, featured }) {
   return (
-    <div
-      className="w-full aspect-video flex items-center justify-center"
-      style={{
-        background: "repeating-linear-gradient(-45deg, #1c1c1c, #1c1c1c 3px, #202020 3px, #202020 7px)",
-      }}
+    <article
+      className={`anim-rise py-10 first:pt-0 border-b border-(--border) ${
+        project.image ? "flex flex-col gap-5 md:grid md:grid-cols-[1fr_300px] md:gap-x-12 md:items-start" : ""
+      }`}
+      style={{ "--d": `${0.08 + index * 0.06}s` }}
     >
-      <span className={`${JETBRAINS_MONO.className} text-[10px] tracking-widest uppercase text-(--tertiary-text)`}>
-        [ img — coming ]
-      </span>
-    </div>
-  );
-}
+      {project.image && (
+        <img
+          src={project.image}
+          srcSet={project.imageSrcSet}
+          sizes="(min-width: 768px) 300px, 92vw"
+          alt={project.imageAlt || project.title}
+          loading="lazy"
+          width={800}
+          height={project.image.includes("amra-sub") ? 400 : project.image.includes("ae315-lab") ? 600 : undefined}
+          className="w-full aspect-video md:aspect-4/3 object-cover border border-(--border) md:order-2"
+        />
+      )}
 
-function ProjectCard({ project }) {
-  return (
-    <motion.article variants={slideUp} className="flex flex-col gap-3 pb-8 border-b border-(--border)">
-      {project.image
-        ? <img src={project.image} alt={project.title} className="w-full aspect-video object-cover" />
-        : <ImagePlaceholder />}
-
-      <div className="flex flex-col gap-2 pt-1">
-        <p className={`${JETBRAINS_MONO.className} text-[10px] tracking-widest uppercase text-(--secondary-text)`}>
-          <span className="text-(--accent)">{project.category}</span>
-          {" · "}
-          {project.time}
+      <div className="flex flex-col gap-2 md:order-1 max-w-[70ch]">
+        <p className="flex items-baseline gap-2">
+          <span className={`${SANS.className} text-[12px] font-medium text-(--active)`}>
+            {project.category}
+          </span>
+          <span className={`${SANS.className} text-[12px] text-(--tertiary-text)`}>
+            {project.inProgress && (
+              <span
+                aria-hidden="true"
+                className="anim-breathe inline-block w-1.5 h-1.5 rounded-full bg-(--accent-ink) mr-2 align-middle"
+              />
+            )}
+            {project.time}
+          </span>
         </p>
 
-        <h2 className={`${SOURCE_SERIF.className} text-[22px] leading-tight font-normal tracking-[-0.01em] text-(--primary-text)`}>
-          <a href={project.url} className="hover:text-(--accent) transition-colors">
-            {project.title}
-          </a>
+        <h2
+          className={`${SERIF.className} ${featured ? "text-[24px]" : "text-[21px]"} leading-snug font-medium tracking-[-0.005em] text-(--primary-text)`}
+        >
+          {project.url ? (
+            <a href={project.url} className="inline-block py-2 -my-2 hover:text-(--active) transition-colors">
+              {project.title}
+            </a>
+          ) : (
+            project.title
+          )}
         </h2>
 
-        <p className="text-[13px] text-(--secondary-text)">
+        <p className={`${SANS.className} text-[13px] text-(--tertiary-text)`}>
           {project.org} · {project.role}
         </p>
 
-        <p className={`${SOURCE_SERIF.className} text-[15px] leading-relaxed text-(--secondary-text)`}>
+        <p className={`${SERIF.className} text-[15px] leading-[1.65] text-(--secondary-text) [text-wrap:pretty]`}>
           {renderBold(project.summary)}
         </p>
 
-        <div className="flex flex-wrap gap-2 pt-1">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className={`${JETBRAINS_MONO.className} text-[10px] tracking-wide uppercase px-2 py-0.5 border border-(--border) text-(--secondary-text)`}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        <p className={`${SANS.className} text-[12px] text-(--tertiary-text) pt-1`}>
+          {project.tags.join(" · ")}
+        </p>
       </div>
-    </motion.article>
+    </article>
   );
 }
 
@@ -81,17 +87,24 @@ export default function Projects() {
     : PROJECTS_INFO.filter((p) => p.category === active);
 
   return (
-    <main className="flex flex-col gap-6 pt-6 w-full">
+    <main className="flex flex-col w-full">
+      {/* Page title */}
+      <PageTitle>Projects</PageTitle>
+
       {/* Filter row */}
-      <div className={`${JETBRAINS_MONO.className} flex gap-5 text-[11px] tracking-widest uppercase border-b border-(--border) pb-4`}>
+      <div
+        className={`${SANS.className} anim-rise flex flex-wrap gap-x-6 gap-y-2 text-[13px] mt-8 pb-4 border-b border-(--border)`}
+        style={{ "--d": "0.07s" }}
+      >
         {CATEGORIES.map((cat) => (
           <button
             key={cat}
             onClick={() => setActive(cat)}
-            className={`transition-colors cursor-pointer ${
+            aria-pressed={active === cat}
+            className={`cursor-pointer transition-colors px-1 py-3.5 -my-3.5 ${
               active === cat
-                ? "text-(--accent) border border-(--accent) px-2 py-0.5"
-                : "text-(--secondary-text) hover:text-(--primary-text)"
+                ? "text-(--active) underline underline-offset-6 decoration-1"
+                : "text-(--tertiary-text) hover:text-(--primary-text)"
             }`}
           >
             {cat}
@@ -99,18 +112,17 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* 2-column card grid */}
-      <motion.div
-        key={active}
-        className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-0"
-        variants={staggerParent(0.1)}
-        initial="hidden"
-        animate="visible"
-      >
-        {filtered.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+      {/* Entries — single ruled column; images sit as right-hand plates */}
+      <div key={active} className="flex flex-col pt-10">
+        {filtered.map((project, i) => (
+          <ProjectEntry
+            key={project.id}
+            project={project}
+            index={i}
+            featured={project.inProgress}
+          />
         ))}
-      </motion.div>
+      </div>
     </main>
   );
 }

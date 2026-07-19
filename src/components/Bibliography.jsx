@@ -1,13 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useId } from "react";
 import { ChevronDown } from "lucide-react";
-import { JETBRAINS_MONO, SOURCE_SERIF } from "@/utils/constants";
+import { SANS, SERIF } from "@/utils/constants";
 import { BibliographyContext } from "@/utils/BibliographyContext";
 
 export default function Bibliography({ children }) {
   const [open, setOpen] = useState(false);
   const [highlighted, setHighlighted] = useState(null);
+  const listId = useId();
 
   useEffect(() => {
     const handler = ({ detail: { n } }) => {
@@ -26,7 +27,9 @@ export default function Bibliography({ children }) {
     <div className="mt-16 pt-6 border-t border-(--border)">
       <button
         onClick={() => setOpen((v) => !v)}
-        className={`${JETBRAINS_MONO.className} flex items-center gap-2 text-[10px] tracking-widest uppercase text-(--secondary-text) hover:text-(--primary-text) transition-colors cursor-pointer`}
+        aria-expanded={open}
+        aria-controls={listId}
+        className={`${SANS.className} flex items-center gap-2 text-[12px] font-medium text-(--secondary-text) hover:text-(--primary-text) transition-colors cursor-pointer`}
       >
         References
         <ChevronDown
@@ -37,7 +40,7 @@ export default function Bibliography({ children }) {
 
       {open && (
         <BibliographyContext.Provider value={{ active: true, highlighted }}>
-          <div className={`${SOURCE_SERIF.className} mt-5 flex flex-col`}>
+          <div id={listId} className={`${SERIF.className} mt-5 flex flex-col`}>
             {children}
           </div>
         </BibliographyContext.Provider>

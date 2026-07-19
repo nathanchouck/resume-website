@@ -32,7 +32,6 @@ const AppProvider = ({children}) => {
     }
     
     const handleToggleTheme = () => {
-        console.log(theme)
         if(theme == "dark") {
             setTheme("light");
         } else {
