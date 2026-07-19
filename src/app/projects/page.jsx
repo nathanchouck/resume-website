@@ -3,11 +3,11 @@ import ProjectsContainer from "@/containers/Projects";
 
 export const metadata = {
   title: "Projects",
-  description: "Aerospace engineering projects by Nathan Houck — aerodynamics research, submarine cooling systems, and jet engine propulsion.",
+  description: "Propulsion and engineering projects by Nathan Houck: cold gas nozzle design, afterburner cooling, submarine hardware, and aerodynamics research.",
   alternates: { canonical: "https://nathanhouck.com/projects" },
   openGraph: {
     title: "Projects — Nathan Houck",
-    description: "Aerodynamics research, submarine cooling systems, and jet engine propulsion.",
+    description: "Cold gas nozzle design, afterburner cooling, submarine hardware, and aerodynamics research.",
     url: "https://nathanhouck.com/projects",
   },
 };
@@ -15,7 +15,7 @@ export const metadata = {
 export default function Projects() {
   return (
     <PageWrapper>
-      <div className="px-5 pt-10 pb-20 lg:pb-8 w-full max-w-240">
+      <div className="px-5 sm:px-8 w-full max-w-[1100px] pt-14 pb-32 lg:pt-20 lg:pb-20">
         <ProjectsContainer />
       </div>
     </PageWrapper>

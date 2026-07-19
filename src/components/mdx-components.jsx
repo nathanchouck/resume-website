@@ -1,23 +1,25 @@
-import { SOURCE_SERIF, JETBRAINS_MONO } from "@/utils/constants";
+import { SERIF } from "@/utils/constants";
 import Bibliography from "@/components/Bibliography";
 import MDXParagraph from "@/components/MDXParagraph";
 
 const mdxComponents = {
   Bibliography,
+  // Mapped to <h2> (not <h1>) so MDX content can never introduce a second
+  // page-level h1 — the article's own <h1> (post title) owns that role.
+  // Visual styling is kept identical to the original h1 treatment.
   h1: (props) => (
-    <h1 className={`${SOURCE_SERIF.className} mt-2 mb-5 text-[26px] font-normal tracking-[-0.01em] text-(--primary-text)`} {...props} />
+    <h2 className={`${SERIF.className} mt-2 mb-5 text-[26px] font-normal tracking-[-0.01em] text-(--primary-text)`} {...props} />
   ),
 
   h2: ({ children, ...props }) => (
     <div className="mt-10 mb-4">
-      <div className="w-6 h-px bg-(--accent) mb-3" />
-      <h2 className={`${SOURCE_SERIF.className} text-[22px] font-normal tracking-[-0.015em] text-(--primary-text)`} {...props}>{children}</h2>
+      <h2 className={`${SERIF.className} text-[22px] font-medium tracking-[-0.015em] text-(--primary-text)`} {...props}>{children}</h2>
     </div>
   ),
 
   h3: ({ children, ...props }) => (
-    <div className="mt-8 mb-3">
-      <h3 className={`${SOURCE_SERIF.className} text-[17px] font-normal text-(--secondary-text)`} {...props}>{children}</h3>
+    <div className="mt-6 mb-3">
+      <h3 className={`${SERIF.className} text-[18px] font-medium text-(--primary-text)`} {...props}>{children}</h3>
     </div>
   ),
 
@@ -25,7 +27,7 @@ const mdxComponents = {
 
   a: (props) => (
     <a
-      className="text-(--primary-text) underline underline-offset-2 decoration-(--accent) hover:text-(--accent) transition-colors"
+      className="text-(--primary-text) underline decoration-(--border) underline-offset-4 hover:text-(--active) hover:decoration-(--active) transition-colors"
       {...props}
     />
   ),
@@ -35,17 +37,17 @@ const mdxComponents = {
   ),
 
   ol: (props) => (
-    <ol className={`${SOURCE_SERIF.className} pl-5 text-(--secondary-text) mb-5 list-decimal text-[17px] leading-[1.65]`} {...props} />
+    <ol className={`${SERIF.className} pl-5 text-(--secondary-text) mb-5 list-decimal text-[17px] leading-[1.65]`} {...props} />
   ),
 
   ul: (props) => (
-    <ul className={`${SOURCE_SERIF.className} pl-5 mb-5 text-(--secondary-text) list-disc text-[17px] leading-[1.65]`} {...props} />
+    <ul className={`${SERIF.className} pl-5 mb-5 text-(--secondary-text) list-disc text-[17px] leading-[1.65]`} {...props} />
   ),
 
   li: (props) => <li className="mb-2" {...props} />,
 
   img: (props) => (
-    <img className="max-w-full h-auto" {...props} />
+    <img className="max-w-full h-auto" loading="lazy" decoding="async" {...props} />
   ),
 
   figure: (props) => (
@@ -53,12 +55,12 @@ const mdxComponents = {
   ),
 
   figcaption: (props) => (
-    <figcaption className={`${JETBRAINS_MONO.className} mt-2 text-[10px] tracking-widest uppercase text-center text-(--tertiary-text)`} {...props} />
+    <figcaption className={`${SERIF.className} italic mt-2 text-[13px] text-center text-(--tertiary-text)`} {...props} />
   ),
 
   blockquote: (props) => (
     <blockquote
-      className={`${SOURCE_SERIF.className} pl-5 pr-4 py-3 mb-6 border-l-2 border-(--accent) text-(--secondary-text) italic text-[17px] leading-[1.65] [&>p]:mb-0`}
+      className={`${SERIF.className} pl-5 pr-4 py-3 mb-6 border-l-2 border-(--accent) text-(--secondary-text) italic text-[17px] leading-[1.65] [&>p]:mb-0`}
       {...props}
     />
   ),

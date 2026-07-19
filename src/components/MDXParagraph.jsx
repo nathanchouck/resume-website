@@ -3,7 +3,7 @@
 import { useContext } from "react";
 import { BibliographyContext } from "@/utils/BibliographyContext";
 import FootnoteRef from "@/components/FootnoteRef";
-import { SOURCE_SERIF, JETBRAINS_MONO } from "@/utils/constants";
+import { SERIF, SANS } from "@/utils/constants";
 
 // Recursively replace [n] patterns in text nodes with <FootnoteRef>
 function parseInlineRefs(node) {
@@ -70,11 +70,11 @@ export default function MDXParagraph({ children, ...props }) {
       return (
         <p
           id={`ref-${n}`}
-          className={`${SOURCE_SERIF.className} flex gap-2 text-[13px] leading-relaxed mb-2 px-2 -mx-2 rounded transition-colors duration-700 ${
+          className={`${SERIF.className} flex gap-2 text-[13px] leading-relaxed mb-2 px-2 -mx-2 transition-colors duration-700 ${
             isHighlighted ? "text-(--primary-text) bg-(--accent)/10" : "text-(--tertiary-text) bg-transparent"
           }`}
         >
-          <span className={`${JETBRAINS_MONO.className} text-[11px] text-(--accent) shrink-0 mt-0.5`}>
+          <span className={`${SANS.className} text-[12px] font-medium text-(--accent) shrink-0 mt-0.5`}>
             [{n}]
           </span>
           <span>{rest}</span>
@@ -83,7 +83,7 @@ export default function MDXParagraph({ children, ...props }) {
     }
 
     return (
-      <p className={`${SOURCE_SERIF.className} text-[13px] leading-relaxed mb-2 text-(--tertiary-text)`}>
+      <p className={`${SERIF.className} text-[13px] leading-relaxed mb-2 text-(--tertiary-text)`}>
         {children}
       </p>
     );
@@ -92,7 +92,7 @@ export default function MDXParagraph({ children, ...props }) {
   // Normal body paragraph: parse [n] refs inline
   return (
     <p
-      className={`${SOURCE_SERIF.className} mb-5 text-[17px] leading-[1.65] text-(--secondary-text)`}
+      className={`${SERIF.className} mb-5 text-[17px] leading-[1.7] text-(--secondary-text)`}
       {...props}
     >
       {parseInlineRefs(children)}

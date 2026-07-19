@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-19T00:00:00Z",
+  "title": "Design System: nathanhouck.com",
+  "extensions": {
+    "colorMeta": {
+      "iron-gall-blue": {
+        "role": "primary",
+        "displayName": "Iron-Gall Blue",
+        "canonical": "oklch(0.45 0.16 268)",
+        "tonalRamp": ["oklch(0.15 0.08 268)", "oklch(0.26 0.12 268)", "oklch(0.37 0.15 268)", "oklch(0.45 0.16 268)", "oklch(0.56 0.15 267)", "oklch(0.67 0.13 266)", "oklch(0.8 0.09 265)", "oklch(0.93 0.04 265)"]
+      },
+      "iron-gall-bright": {
+        "role": "primary",
+        "displayName": "Iron-Gall Bright (dark theme)",
+        "canonical": "oklch(0.72 0.12 265)",
+        "tonalRamp": ["oklch(0.3 0.1 265)", "oklch(0.4 0.12 265)", "oklch(0.5 0.13 265)", "oklch(0.6 0.13 265)", "oklch(0.72 0.12 265)", "oklch(0.8 0.1 265)", "oklch(0.88 0.06 265)", "oklch(0.95 0.03 265)"]
+      },
+      "blue-black-ink": {
+        "role": "neutral",
+        "displayName": "Blue-Black Ink",
+        "canonical": "oklch(0.24 0.025 270)",
+        "tonalRamp": ["oklch(0.15 0.02 270)", "oklch(0.24 0.025 270)", "oklch(0.33 0.023 270)", "oklch(0.42 0.02 270)", "oklch(0.53 0.017 270)", "oklch(0.66 0.013 268)", "oklch(0.8 0.009 266)", "oklch(0.95 0.005 265)"]
+      },
+      "cool-paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "oklch(0.97 0.005 265)",
+        "tonalRamp": ["oklch(0.22 0.02 268)", "oklch(0.35 0.015 267)", "oklch(0.5 0.012 266)", "oklch(0.65 0.01 266)", "oklch(0.78 0.008 265)", "oklch(0.88 0.008 265)", "oklch(0.94 0.006 265)", "oklch(0.985 0.002 265)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The one headline sentence per page. Literata 500 with optical sizing." },
+      "body": { "displayName": "Body", "purpose": "Prose at ≤62ch, text-wrap: pretty." },
+      "title": { "displayName": "Section Title", "purpose": "Archivo 600, 13px, normal case, with trailing hairline. An instrument label, not an eyebrow." },
+      "label": { "displayName": "UI Label", "purpose": "Archivo for buttons, values, numbers (tabular-nums), nav labels." },
+      "mono": { "displayName": "Figure Mono", "purpose": "Quarantined inside drawings only: station labels, dimension symbols, QUERY/MATCH." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Every entrance and transition." },
+      { "name": "rise", "value": "0.55s, translateY(12px) + fade, backwards fill", "purpose": "Block entrances; statically visible without JS." },
+      { "name": "stroke-draw", "value": "1.1s dashoffset 1→0 on pathLength=1", "purpose": "Figure contours draw themselves in." },
+      { "name": "flow-travel", "value": "2.1s linear infinite, dasharray 3 8.5", "purpose": "Nozzle streamlines — ambient." },
+      { "name": "bead-travel", "value": "4.2s linear infinite, dasharray 7 93 on pathLength=100", "purpose": "Memory-graph retrieval pulse — ambient." },
+      { "name": "ring-breathe", "value": "3.8s ease-in-out infinite, opacity 0.3↔1", "purpose": "MATCH ring — ambient." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled action per page — Iron-Gall fill, sharp corners, trailing arrow.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Download résumé <span aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent, oklch(0.45 0.16 268)); color: var(--button-text, oklch(0.985 0.002 265)); font-family: Archivo, system-ui, sans-serif; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 0; text-decoration: none; transition: opacity 0.15s, transform 0.15s; } .ds-btn-primary:hover { opacity: 0.9; } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--accent, oklch(0.45 0.16 268)); outline-offset: 2px; }"
+    },
+    {
+      "name": "Quiet Document Link",
+      "kind": "custom",
+      "refersTo": "link-quiet",
+      "description": "Secondary links (CV, email): ink with a hairline underline that floods Iron-Gall on hover.",
+      "html": "<a class=\"ds-link-quiet\" href=\"#\">CV (PDF)</a>",
+      "css": ".ds-link-quiet { color: var(--secondary-text, oklch(0.38 0.02 270)); font-family: Archivo, system-ui, sans-serif; font-size: 13px; text-decoration: underline; text-decoration-color: var(--border, oklch(0.88 0.008 265)); text-decoration-thickness: 1px; text-underline-offset: 4px; transition: color 0.15s, text-decoration-color 0.15s; } .ds-link-quiet:hover { color: var(--active, oklch(0.45 0.16 268)); text-decoration-color: var(--active, oklch(0.45 0.16 268)); }"
+    },
+    {
+      "name": "Section Title",
+      "kind": "custom",
+      "refersTo": "section-title",
+      "description": "Archivo 600, 13px, normal case, with trailing hairline — the single labeling device.",
+      "html": "<div class=\"ds-section-title\"><h2>Currently</h2><span class=\"ds-section-rule\" aria-hidden=\"true\"></span></div>",
+      "css": ".ds-section-title { display: flex; align-items: center; gap: 20px; } .ds-section-title h2 { font-family: Archivo, system-ui, sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.01em; color: var(--primary-text, oklch(0.24 0.025 270)); margin: 0; } .ds-section-rule { flex: 1; height: 1px; background: var(--border, oklch(0.88 0.008 265)); }"
+    },
+    {
+      "name": "Status Row",
+      "kind": "custom",
+      "description": "Telemetry-quiet dl row: italic Iron-Gall label, Archivo value, hairline below.",
+      "html": "<div class=\"ds-status-row\"><dt class=\"ds-status-label\">Researching</dt><dd class=\"ds-status-value\">Cold gas nozzle experiment — design &amp; build</dd></div>",
+      "css": ".ds-status-row { display: grid; grid-template-columns: 118px 1fr; gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--border, oklch(0.88 0.008 265)); } .ds-status-label { font-family: Archivo, system-ui, sans-serif; font-weight: 500; font-size: 13px; color: var(--secondary-text, oklch(0.38 0.02 270)); margin: 0; } .ds-status-value { font-family: Archivo, system-ui, sans-serif; font-size: 14px; line-height: 1.375; color: var(--primary-text, oklch(0.24 0.025 270)); margin: 0; }"
+    },
+    {
+      "name": "Contents Row",
+      "kind": "nav",
+      "description": "ToC row: tabular Iron-Gall number, Archivo title, arrow that gains ink and +2px on hover.",
+      "html": "<a class=\"ds-contents-row\" href=\"#\" aria-label=\"Projects\"><span class=\"ds-contents-n\" aria-hidden=\"true\">1</span><span class=\"ds-contents-t\">Projects</span><span class=\"ds-contents-a\" aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-contents-row { display: flex; align-items: baseline; gap: 20px; padding: 14px 12px; border-bottom: 1px solid var(--border, oklch(0.88 0.008 265)); text-decoration: none; transition: background 0.15s; } .ds-contents-row:hover { background: var(--button-highlight, oklch(0.93 0.007 265)); } .ds-contents-n { font-family: Archivo, system-ui, sans-serif; font-size: 12px; font-variant-numeric: tabular-nums; color: var(--active, oklch(0.45 0.16 268)); width: 16px; flex-shrink: 0; } .ds-contents-t { font-family: Archivo, system-ui, sans-serif; font-size: 15px; font-weight: 500; color: var(--primary-text, oklch(0.24 0.025 270)); flex: 1; } .ds-contents-a { font-family: Archivo, system-ui, sans-serif; font-size: 13px; color: var(--tertiary-text, oklch(0.5 0.015 270)); transition: color 0.15s, transform 0.15s; } .ds-contents-row:hover .ds-contents-a { color: var(--active, oklch(0.45 0.16 268)); transform: translateX(2px); }"
+    },
+    {
+      "name": "Nav Icon Item",
+      "kind": "nav",
+      "description": "Rail item: 1.5px-stroke icon with a 10px Archivo label beneath; active state in Iron-Gall.",
+      "html": "<a class=\"ds-nav-item ds-nav-item--active\" href=\"#\" aria-label=\"Now\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg><span>Now</span></a>",
+      "css": ".ds-nav-item { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px; color: var(--inactive, oklch(0.58 0.014 270)); text-decoration: none; border-radius: 6px; } .ds-nav-item span { font-family: Archivo, system-ui, sans-serif; font-size: 10px; line-height: 1; } .ds-nav-item--active { color: var(--active, oklch(0.45 0.16 268)); } .ds-nav-item:focus-visible { outline: 2px solid var(--accent, oklch(0.45 0.16 268)); outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Ink & Instrument",
+    "overview": "The system pairs the writer's ink with the engineer's instrument. Every surface is cool paper carrying blue-black ink; every accent is one archival blue; every structural line is a hairline drawn with intent. The engineering is expressed through precision — exact alignment, weighted line-work in real technical drawings, tabular numbers — never through costume. If an element pretends to be a physical document artifact rather than simply being well-made, it is off-system.",
+    "keyCharacteristics": [
+      "Cool paper, never warm cream; midnight desk (dark) first-load default, cool paper on the toggle",
+      "One accent (Iron-Gall Blue) doing every colored job on the page",
+      "Serif-led voice (Literata) framed by machined UI (Archivo); mono quarantined inside figures",
+      "Hairline rules and sharp corners; flat surfaces; depth by tint, not shadow",
+      "Two living line drawings as personality anchors, ambient and reduced-motion-safe"
+    ],
+    "rules": [
+      { "name": "The One Ink Rule", "body": "Iron-Gall Blue is the only chromatic voice, on ≤10% of any screen. If a second hue appears anywhere outside a photograph, it is a bug. The retired red must not return.", "section": "colors" },
+      { "name": "The Quarantined Mono Rule", "body": "Fragment Mono may appear only inside a drawing, where a technical annotation is authentic. Mono as UI chrome is forbidden.", "section": "typography" },
+      { "name": "The Two Voices Rule", "body": "Serif (Literata) speaks only where prose lives: headline, body paragraphs, quoted questions, captions. Every label, section title, value, and navigation row is Archivo, roman, normal case. Italic serif used as a label is the AI-editorial fingerprint; forbidden here.", "section": "typography" },
+      { "name": "The Flat Paper Rule", "body": "If an element casts a shadow, it is off-system. Separation is drawn (hairlines) or tinted (paper steps), never floated.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep midnight desk (dark) as the first-load default; cool paper is the toggle.",
+      "Do spend Iron-Gall Blue only on: primary CTA, links/hovers, active nav, figure annotations, status labels, Contents numbers.",
+      "Do draw separations with hairlines and keep every corner sharp (0px).",
+      "Do keep both drawings alive (traveling dashes, breathing ring) and complete without JavaScript.",
+      "Do hold text contrast: body ≥ Ink Secondary, captions ≥ Ink Tertiary (5.5:1 floor)."
+    ],
+    "donts": [
+      "Don't reintroduce costume props: report stamps, REV numbers, ABSTRACT labels, 'Fig.' prefixes, or any document-larp detail.",
+      "Don't use the PRODUCT.md anti-reference aesthetics: LinkedIn / generic student portfolio, bright SaaS marketing, AI-template aesthetics (cream-and-serif defaults, eyebrow labels, glassmorphism), sci-fi / space kitsch.",
+      "Don't warm the paper — the body background never enters the cream band; it stays cool toward the ink hue.",
+      "Don't use mono outside a figure, tracked-uppercase eyebrows, side-stripe borders, gradient text, or box-shadows.",
+      "Don't bring back the red. One ink."
+    ]
+  }
+}

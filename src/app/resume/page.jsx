@@ -1,11 +1,14 @@
 import PageWrapper from "@/components/PageWrapper";
 import WorkExperience from "@/containers/WorkExperience";
 import Education from "@/containers/Education";
-import { JETBRAINS_MONO } from "@/utils/constants";
+import PageTitle from "@/components/PageTitle";
+import PrimaryButton from "@/components/PrimaryButton";
+import QuietLink from "@/components/QuietLink";
+import { CV_PDF, RESUME_PDF, SANS } from "@/utils/constants";
 
 export const metadata = {
   title: "Résumé",
-  description: "Work experience and education for Nathan Houck — AI intern at EPI-USE America, aerodynamics grader at Embry-Riddle, B.S. Aerospace Engineering.",
+  description: "Work experience and education for Nathan Houck: AI intern at EPI-USE America, aerodynamics grader at Embry-Riddle, B.S. Aerospace Engineering.",
   alternates: { canonical: "https://nathanhouck.com/resume" },
   openGraph: {
     title: "Résumé — Nathan Houck",
@@ -17,19 +20,28 @@ export const metadata = {
 export default function Resume() {
   return (
     <PageWrapper>
-      <div className="px-5 pt-10 pb-20 lg:pb-8 w-full max-w-200">
-        <div className="w-full flex justify-end pt-2 pb-4">
-          <a
-            href="/NathanHouck-Resume (nathanhouck.com).pdf"
-            download
-            className={`${JETBRAINS_MONO.className} text-[11px] tracking-widest uppercase px-4 py-2 bg-(--active) text-(--button-text) hover:opacity-90 transition-opacity`}
-          >
-            Download PDF →
-          </a>
+      <main className="px-5 sm:px-8 w-full max-w-[800px] pt-14 pb-32 lg:pt-20 lg:pb-20">
+        {/* Page title */}
+        <PageTitle>Résumé</PageTitle>
+
+        {/* CTA row */}
+        <div
+          className="anim-rise flex flex-wrap items-center gap-x-6 gap-y-4 mt-8"
+          style={{ "--d": "0.07s" }}
+        >
+          <PrimaryButton href={RESUME_PDF} download="NathanHouck-Resume.pdf">
+            Download PDF
+          </PrimaryButton>
+          <span className={`${SANS.className} text-[13px] text-(--secondary-text)`}>
+            <QuietLink href={CV_PDF} download="NathanHouck-CV.pdf">
+              CV (PDF)
+            </QuietLink>
+          </span>
         </div>
+
         <WorkExperience />
         <Education />
-      </div>
+      </main>
     </PageWrapper>
   );
 }

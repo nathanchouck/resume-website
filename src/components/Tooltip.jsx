@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { slideSpring } from "../utils/animations";
 
 // PARENT MUST BE RELATIVE
@@ -39,7 +39,7 @@ const Tooltip = ({
           animate="visible"
           exit="hidden"
           style={offset[direction]}
-          className={`absolute z-10 p-1 text-xs font-light border rounded-lg text-pg border-border bg-fg ${
+          className={`absolute z-10 p-1 text-xs font-light border rounded-lg text-(--primary-text) border-(--border) bg-(--fg) ${
             isHiddenResponsive ? "hidden lg:block" : ""
           }`}
         >

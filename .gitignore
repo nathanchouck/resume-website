@@ -45,3 +45,6 @@ next-env.d.ts
 Redesign_Report.md
 NATHAN_CONTEXT.md
 /.claude
+# impeccable local runtime artifacts
+.impeccable/live/sessions/
+.impeccable/config.local.json
