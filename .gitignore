@@ -48,3 +48,7 @@ NATHAN_CONTEXT.md
 # impeccable local runtime artifacts
 .impeccable/live/sessions/
 .impeccable/config.local.json
+
+# notebook: generated from the second-brain export at build time
+/src/data/notebook-graph.json
+/public/notebook/

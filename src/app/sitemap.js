@@ -30,6 +30,7 @@ export default async function sitemap() {
       { url: `${BASE_URL}/projects`,         lastModified: today, priority: 0.8 },
       { url: `${BASE_URL}/resume`,           lastModified: today, priority: 0.8 },
       { url: `${BASE_URL}/musings`,          lastModified: today, priority: 0.7 },
+      { url: `${BASE_URL}/notebook`,         lastModified: today, priority: 0.7 },
       { url: `${BASE_URL}/now`,              lastModified: today, priority: 0.6 },
     ];
 

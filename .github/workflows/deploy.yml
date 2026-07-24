@@ -11,6 +11,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Checkout second-brain
+        uses: actions/checkout@v4
+        with:
+          repository: nathanchouck/second-brain
+          path: brain
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -22,6 +28,8 @@ jobs:
 
       - name: Build static site
         run: npm run build
+        env:
+          BRAIN_EXPORT_PATH: ${{ github.workspace }}/brain/outputs/site-export
 
       - name: Deploy to Hostinger via rsync
         uses: burnett01/rsync-deployments@7.0.1

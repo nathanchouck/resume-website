@@ -186,3 +186,123 @@ h1, h2, h3 {
     scroll-behavior: auto !important;
   }
 }
+
+/*
+ * ── Notebook ──────────────────────────────────────────────────────────
+ * Note-panel prose: the pre-rendered note HTML, styled to echo the Musings
+ * article body (Literata, ink tokens, hairline rules). Tokens only, so it
+ * tracks light/dark. Long unbreakable strings (pass-through LaTeX-ish math)
+ * wrap or scroll rather than overflow the narrow panel.
+ */
+.notebook-prose {
+  color: var(--primary-text);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.notebook-prose p { margin-bottom: 1rem; }
+.notebook-prose > :first-child { margin-top: 0; }
+.notebook-prose a {
+  color: var(--primary-text);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 4px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+.notebook-prose a:hover {
+  color: var(--active);
+  text-decoration-color: var(--active);
+}
+.notebook-prose h1,
+.notebook-prose h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--primary-text);
+  margin: 1.6rem 0 0.5rem;
+}
+.notebook-prose h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin: 1.3rem 0 0.4rem;
+}
+.notebook-prose ul,
+.notebook-prose ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-text);
+}
+.notebook-prose ul { list-style: disc; }
+.notebook-prose ol { list-style: decimal; }
+.notebook-prose li { margin-bottom: 0.35rem; }
+.notebook-prose blockquote {
+  border-left: 2px solid var(--accent);
+  padding: 0.25rem 0 0.25rem 1rem;
+  margin: 0 0 1rem;
+  font-style: italic;
+  color: var(--secondary-text);
+}
+.notebook-prose blockquote > :last-child { margin-bottom: 0; }
+.notebook-prose code {
+  font-size: 0.9em;
+  background: var(--button-highlight);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+.notebook-prose pre {
+  background: var(--button-highlight);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  font-size: 13px;
+}
+.notebook-prose pre code {
+  background: none;
+  padding: 0;
+}
+.notebook-prose img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+.notebook-prose hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+/* KaTeX math — the prose sets overflow-wrap/word-break for prose text, which
+   would split formulas mid-symbol; reset them within KaTeX. Wide display
+   blocks ($$…$$) scroll horizontally inside the narrow panel instead of
+   overflowing it. */
+.notebook-prose .katex {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+.notebook-prose .katex-display {
+  margin: 1rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.25rem;
+}
+/* KaTeX renders both a visual layer and a hidden MathML layer; without this the
+   clipboard picks up both and each copied formula is duplicated. Excluding the
+   MathML layer from selection leaves only the visual text in copied output.
+   user-select only affects selection/clipboard — the MathML stays in the a11y
+   tree, so screen-reader exposure is unchanged. */
+.notebook-prose .katex-mathml {
+  user-select: none;
+}
+
+/* Note-panel loading skeleton — subtle --border tint; reduced-motion safe
+   (the global block above collapses the shimmer to a static block). */
+@keyframes notebook-shimmer {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+.notebook-skeleton {
+  background: var(--border);
+  border-radius: 2px;
+  animation: notebook-shimmer 1.4s ease-in-out infinite;
+}
