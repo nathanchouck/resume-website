@@ -247,6 +247,12 @@ export default function NotebookPanel({ id, onClose, onNavigate }) {
 
               <LinkList title="Links" items={note.links} onNavigate={onNavigate} />
               <LinkList title="Referenced by" items={note.backlinks} onNavigate={onNavigate} />
+
+              <div className="mt-6 pt-6 border-t border-(--border)">
+                <p className={`${MONO.className} text-[11px] tracking-[0.15em] uppercase text-(--tertiary-text)`}>
+                  AI-SYNTHESIZED FROM ORIGINAL NOTES &amp; COURSEWORK
+                </p>
+              </div>
             </>
           )}
         </div>

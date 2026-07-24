@@ -118,7 +118,8 @@ export default function NotebookView({ graph }) {
         This is what I know — or at least, what I&rsquo;ve written down. Every course I&rsquo;ve
         taken, every topic I&rsquo;ve chased, and every source worth keeping, exported from the
         notes I actually work in. The lines are cross-references; the dense regions are where
-        I&rsquo;ve spent the most time.
+        I&rsquo;ve spent the most time. The summaries are AI-synthesized from my real notes and
+        coursework — the deliberate counterpart to the Musings, where no AI touches a word.
       </p>
 
       <p
