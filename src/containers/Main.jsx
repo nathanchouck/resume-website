@@ -35,7 +35,7 @@ export default function Main() {
   return (
     <main className="w-full flex flex-col">
       {/* ── Header: name + one hairline ─────────────────────────── */}
-      <header className="anim-rise" style={{ "--d": "0s" }}>
+      <header className="anim-lift" style={{ "--d": "0s" }}>
         <p
           className={`${SANS.className} text-[13px] font-medium tracking-[0.02em] text-(--primary-text) pb-3`}
         >
@@ -54,21 +54,21 @@ export default function Main() {
         </div>
         <div className="flex flex-col min-w-0">
           <h1
-            className={`${SERIF.className} font-medium text-[clamp(2.15rem,4.8vw,3.4rem)] leading-[1.12] tracking-[-0.005em] text-(--primary-text) anim-rise`}
+            className={`${SERIF.className} font-medium text-[clamp(2.15rem,4.8vw,3.4rem)] leading-[1.12] tracking-[-0.005em] text-(--primary-text) anim-lift`}
             style={{ "--d": "0.07s", fontOpticalSizing: "auto" }}
           >
             Rocket nozzles, memory systems, and carefully made sentences.
           </h1>
 
           <p
-            className={`${SANS.className} text-[13px] text-(--tertiary-text) mt-6 anim-rise`}
+            className={`${SANS.className} text-[13px] text-(--tertiary-text) mt-6 anim-lift`}
             style={{ "--d": "0.14s" }}
           >
             {LOCATION_TEXT}
           </p>
 
           <div
-            className="flex flex-wrap items-center gap-x-6 gap-y-4 mt-9 anim-rise"
+            className="flex flex-wrap items-center gap-x-6 gap-y-4 mt-9 anim-lift"
             style={{ "--d": "0.21s" }}
           >
             <PrimaryButton href={RESUME_PDF} download="NathanHouck-Resume.pdf">
@@ -88,7 +88,7 @@ export default function Main() {
           </div>
 
           <p
-            className={`${SERIF.className} text-[17px] leading-[1.72] text-(--secondary-text) max-w-[62ch] mt-14 [text-wrap:pretty] anim-rise`}
+            className={`${SERIF.className} text-[17px] leading-[1.72] text-(--secondary-text) max-w-[62ch] mt-14 [text-wrap:pretty] anim-lift`}
             style={{ "--d": "0.28s" }}
           >
             {LEDE_TEXT}

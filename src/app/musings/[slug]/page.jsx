@@ -78,7 +78,7 @@ export default async function PostPage({ params: paramsPromise }) {
           <div className="flex flex-col pt-10 px-5">
             {/* Title */}
             <h1
-              className={`${SERIF.className} anim-rise text-(--primary-text) text-[26px] tracking-[-0.01em] font-medium mb-2`}
+              className={`${SERIF.className} anim-lift text-(--primary-text) text-[26px] tracking-[-0.01em] font-medium mb-2`}
               style={{ "--d": "0s" }}
             >
               {post.title}
@@ -95,7 +95,7 @@ export default async function PostPage({ params: paramsPromise }) {
 
             {/* MDX content */}
             <div
-              className={`${SERIF.className} anim-rise leading-[1.7] text-[17px] text-(--primary-text)`}
+              className={`${SERIF.className} anim-lift leading-[1.7] text-[17px] text-(--primary-text)`}
               style={{ "--d": "0.14s" }}
             >
               <MDXRemote source={post.content} components={mdxComponents} />

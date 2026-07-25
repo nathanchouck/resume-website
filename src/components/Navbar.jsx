@@ -28,7 +28,7 @@ const Navbar = () => {
     return (
         <header className="fixed bottom-0 z-20 flex items-center justify-center w-screen h-16 py-0 border-t border-(--border) bg-(--bg) lg:top-0 lg:border-r lg:border-t-0 lg:w-16 lg:h-full lg:flex-col lg:py-4">
           <nav>
-            <ul className="flex items-center justify-center w-full h-full gap-2 lg:flex-col ">
+            <ul className="flex items-center justify-center w-full h-full gap-1 lg:gap-2 lg:flex-col ">
 
               {ROUTES.map((route) => (
                 <IconButton
@@ -51,12 +51,13 @@ const Navbar = () => {
             </ul>
 
           </nav>
-          <ul className="absolute lg:bottom-4 right-4 lg:right-auto">
+          <ul className="fixed z-30 top-[calc(env(safe-area-inset-top)+0.75rem)] right-[calc(env(safe-area-inset-right)+0.75rem)] lg:absolute lg:z-auto lg:top-auto lg:right-auto lg:bottom-4">
               <IconButton tooltip="Toggle theme"
                 label="Theme"
                 icon="sun-moon"
                 iconSize="1.5rem"
                 handleClick={handleToggleTheme}
+                className="bg-(--bg) border border-(--border) rounded-none lg:bg-transparent lg:border-0 lg:rounded-md"
                 />
             </ul>
 
@@ -75,6 +76,7 @@ const IconButton = ({
     iconSize = "1.5rem",
     href,
     children,
+    className = "",
   }) => {
     const iconColor = isActive ? "var(--active)" : "var(--inactive)";
     const labelColor = isActive ? "var(--active)" : "var(--secondary-text)";
@@ -92,7 +94,7 @@ const IconButton = ({
     );
 
     const sharedProps = {
-      className: "relative flex flex-col items-center justify-center cursor-pointer rounded-md p-2 lg:p-2.5 min-w-[48px]",
+      className: `relative flex flex-col items-center justify-center cursor-pointer rounded-md px-1.5 py-2 lg:p-2.5 min-w-[48px] min-h-[44px] ${className}`,
       "aria-label": tooltip,
       id: tooltip,
     };

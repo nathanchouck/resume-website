@@ -175,7 +175,7 @@ export default async function NotebookNotePage({ params: paramsPromise }) {
 
         {/* Title */}
         <h1
-          className={`${SERIF.className} anim-rise mt-2 text-[clamp(1.7rem,3vw,2rem)] leading-[1.2] font-medium text-(--primary-text)`}
+          className={`${SERIF.className} anim-lift mt-2 text-[clamp(1.7rem,3vw,2rem)] leading-[1.2] font-medium text-(--primary-text)`}
           style={{ "--d": "0.1s" }}
         >
           <Emphasis text={note.title} />

@@ -79,11 +79,14 @@ h1, h2, h3 {
 @keyframes rise {
   from { opacity: 0; transform: translateY(12px); }
 }
+@keyframes lift {
+  from { transform: translateY(14px); }
+}
 @keyframes rule-draw {
   from { transform: scaleX(0); }
 }
 @keyframes fig-in {
-  from { opacity: 0; filter: blur(6px); }
+  from { opacity: 0; transform: translateY(8px) scale(0.985); }
 }
 @keyframes stroke-draw {
   from { stroke-dashoffset: 1; }
@@ -94,6 +97,10 @@ h1, h2, h3 {
 
 .anim-rise {
   animation: rise 0.55s var(--ease-out-expo) backwards;
+  animation-delay: var(--d, 0s);
+}
+.anim-lift {
+  animation: lift 0.55s var(--ease-out-expo) backwards;
   animation-delay: var(--d, 0s);
 }
 .anim-rule {

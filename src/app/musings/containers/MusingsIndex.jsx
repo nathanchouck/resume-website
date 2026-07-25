@@ -4,7 +4,7 @@ export default function MusingsIndex({ posts }) {
   return (
     <main className="px-5 sm:px-8 w-full max-w-[800px] pt-14 pb-32 lg:pt-20 lg:pb-20">
       {/* Page title */}
-      <div className="anim-rise flex items-baseline gap-5" style={{ "--d": "0s" }}>
+      <div className="anim-lift flex items-baseline gap-5" style={{ "--d": "0s" }}>
         <h1 className={`${SERIF.className} text-[clamp(1.7rem,3vw,2rem)] font-medium text-(--primary-text)`}>
           Musings
         </h1>

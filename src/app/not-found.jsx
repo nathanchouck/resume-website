@@ -25,7 +25,7 @@ export default function NotFound() {
         </p>
 
         <h1
-          className={`${SERIF.className} text-[clamp(1.9rem,4vw,2.4rem)] font-medium text-(--primary-text) anim-rise`}
+          className={`${SERIF.className} text-[clamp(1.9rem,4vw,2.4rem)] font-medium text-(--primary-text) anim-lift`}
           style={{ "--d": "0.07s" }}
         >
           Nothing here.
