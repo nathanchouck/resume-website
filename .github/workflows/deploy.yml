@@ -3,6 +3,12 @@ name: Deploy to Hostinger
 on:
   push:
     branches: [master]
+  repository_dispatch:
+    types: [brain-updated]
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
 
 jobs:
   deploy:
