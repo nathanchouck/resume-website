@@ -202,10 +202,14 @@ export default function NotebookView({ graph }) {
                   <ul>
                     {items.map((n) => (
                       <li key={n.id}>
-                        <button
-                          type="button"
+                        <a
+                          href={`/notebook/n/${n.id}/`}
                           aria-current={selectedId === n.id ? "true" : undefined}
                           onClick={(e) => {
+                            // Plain click/Enter opens the in-page panel; let
+                            // modified clicks (new tab, etc.) navigate normally.
+                            if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+                            e.preventDefault();
                             triggerRef.current = e.currentTarget;
                             openNote(n.id);
                           }}
@@ -218,7 +222,7 @@ export default function NotebookView({ graph }) {
                           <span className={`${MONO.className} shrink-0 text-[10px] tracking-[0.1em] text-(--tertiary-text)`}>
                             {n.degree} {n.degree === 1 ? "REF" : "REFS"}
                           </span>
-                        </button>
+                        </a>
                       </li>
                     ))}
                   </ul>

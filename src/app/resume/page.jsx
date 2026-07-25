@@ -14,6 +14,8 @@ export const metadata = {
     title: "Résumé — Nathan Houck",
     description: "Work experience and education for Nathan Houck.",
     url: "https://nathanhouck.com/resume",
+    type: "website",
+    images: [{ url: "/headshot-1024x1024.jpg", width: 1024, height: 1024, alt: "Nathan Houck" }],
   },
 };
 

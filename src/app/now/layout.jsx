@@ -6,6 +6,8 @@ export const metadata = {
     title: "Now — Nathan Houck",
     description: "What Nathan Houck is currently researching, building, and reading.",
     url: "https://nathanhouck.com/now",
+    type: "website",
+    images: [{ url: "/headshot-1024x1024.jpg", width: 1024, height: 1024, alt: "Nathan Houck" }],
   },
 };
 

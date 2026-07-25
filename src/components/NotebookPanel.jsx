@@ -170,8 +170,14 @@ export default function NotebookPanel({ id, onClose, onNavigate }) {
           lg:left-auto lg:right-0 lg:top-0 lg:bottom-0 lg:h-screen lg:w-[min(440px,40vw)] lg:border-t-0 lg:border-l
           border-(--border)"
       >
-        {/* Close control */}
-        <div className="sticky top-0 z-10 flex justify-end p-3 bg-(--fg)">
+        {/* Close control + permalink */}
+        <div className="sticky top-0 z-10 flex justify-between items-center p-3 bg-(--fg)">
+          <a
+            href={`/notebook/n/${id}/`}
+            className={`${MONO.className} px-1 text-[11px] tracking-[0.15em] uppercase text-(--tertiary-text) hover:text-(--primary-text) transition-colors`}
+          >
+            Permalink
+          </a>
           <button
             type="button"
             onClick={onClose}

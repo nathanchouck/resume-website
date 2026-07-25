@@ -9,6 +9,8 @@ export const metadata = {
     title: "Projects — Nathan Houck",
     description: "Cold gas nozzle design, afterburner cooling, submarine hardware, and aerodynamics research.",
     url: "https://nathanhouck.com/projects",
+    type: "website",
+    images: [{ url: "/headshot-1024x1024.jpg", width: 1024, height: 1024, alt: "Nathan Houck" }],
   },
 };
 

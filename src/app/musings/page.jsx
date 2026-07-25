@@ -10,6 +10,8 @@ export const metadata = {
     title: "Musings — Nathan Houck",
     description: "Essays, short stories, and poems by Nathan Houck.",
     url: "https://nathanhouck.com/musings",
+    type: "website",
+    images: [{ url: "/headshot-1024x1024.jpg", width: 1024, height: 1024, alt: "Nathan Houck" }],
   },
 };
 

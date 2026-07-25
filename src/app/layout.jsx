@@ -23,6 +23,8 @@ export const metadata = {
   },
   openGraph: {
     siteName: "Nathan Houck",
+    type: "website",
+    url: "https://nathanhouck.com",
     images: [{ url: "/headshot-1024x1024.jpg", width: 1024, height: 1024, alt: "Nathan Houck" }],
   },
   twitter: {

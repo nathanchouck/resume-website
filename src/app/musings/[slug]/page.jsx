@@ -4,6 +4,7 @@ import { SANS, SERIF } from "@/utils/constants";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import mdxComponents from "@/components/mdx-components";
 import Panel from "./containers/Panel";
+import JsonLd from "@/components/JsonLd";
 
 export function generateStaticParams() {
   const slugs = getAllPostSlugs();
@@ -52,8 +53,24 @@ export default async function PostPage({ params: paramsPromise }) {
   const currentIndex = posts.findIndex((p) => p.slug === post.slug);
   const nextPost = posts[currentIndex + 1] || null;
 
+  const postUrl = `https://nathanhouck.com/musings/${post.slug}`;
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description || "",
+    datePublished: post.date,
+    author: {
+      "@type": "Person",
+      name: "Nathan Houck",
+      url: "https://nathanhouck.com",
+    },
+    mainEntityOfPage: postUrl,
+  };
+
   return (
     <PageWrapper>
+      <JsonLd data={articleJsonLd} />
       <Panel currentPost={post} posts={posts} />
 
       <main className="min-h-screen w-screen lg:ml-85 flex items-center justify-center pt-16 pb-32 lg:pt-0 lg:pb-0 lg:mb-16">
