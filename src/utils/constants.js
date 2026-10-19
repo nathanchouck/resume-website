@@ -31,7 +31,7 @@ export const FAMILY = SANS;
 export const SOURCE_SERIF = SERIF;
 export const JETBRAINS_MONO = MONO;
 
-export const LOCATION_TEXT = "Daytona Beach, FL · West Chester, PA · ERAU Astronautics '27";
+export const LOCATION_TEXT = "Daytona Beach, FL · West Chester, PA · ERAU Aerospace Engineering '27";
 export const LEDE_TEXT =
   "I'm a senior in aerospace engineering at Embry-Riddle, astronautics concentration, graduating May 2027. On Project SENTINEL I'm the integration engineer for a 3U CubeSat that catalogs objects in the GEO belt: I coordinate five subteams, wrote the CONOPS, and derive the requirements. I'm looking for an entry-level systems engineering role. The essays, stories, and poems live in Musings, all written by hand.";
 
@@ -188,4 +188,3 @@ export const EDUCATION = [
 ]
 
 export const RESUME_PDF = "/NathanHouck-Resume-Generic.pdf";
-export const CV_PDF = "/NathanHouck_CV.pdf";

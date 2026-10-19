@@ -4,7 +4,6 @@ import { useAppContext } from "@/app/provider";
 import NozzleFigure from "@/components/NozzleFigure";
 import MemoryDemo from "@/components/MemoryDemo";
 import {
-  CV_PDF,
   LEDE_TEXT,
   LOCATION_TEXT,
   NOW_ITEMS,
@@ -75,12 +74,6 @@ export default function Main() {
               Download résumé
             </PrimaryButton>
             <span className={`${SANS.className} text-[13px] text-(--secondary-text)`}>
-              <QuietLink href={CV_PDF} download="NathanHouck-CV.pdf">
-                CV (PDF)
-              </QuietLink>
-              <span aria-hidden="true" className="mx-3 text-(--tertiary-text)">
-                ·
-              </span>
               <QuietLink href={`mailto:${EMAIL}`}>
                 {EMAIL}
               </QuietLink>

@@ -3,8 +3,7 @@ import WorkExperience from "@/containers/WorkExperience";
 import Education from "@/containers/Education";
 import PageTitle from "@/components/PageTitle";
 import PrimaryButton from "@/components/PrimaryButton";
-import QuietLink from "@/components/QuietLink";
-import { CV_PDF, RESUME_PDF, SANS } from "@/utils/constants";
+import { RESUME_PDF } from "@/utils/constants";
 
 export const metadata = {
   title: "Résumé",
@@ -34,11 +33,6 @@ export default function Resume() {
           <PrimaryButton href={RESUME_PDF} download="NathanHouck-Resume.pdf">
             Download PDF
           </PrimaryButton>
-          <span className={`${SANS.className} text-[13px] text-(--secondary-text)`}>
-            <QuietLink href={CV_PDF} download="NathanHouck-CV.pdf">
-              CV (PDF)
-            </QuietLink>
-          </span>
         </div>
 
         <WorkExperience />
