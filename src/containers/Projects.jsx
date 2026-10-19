@@ -4,7 +4,7 @@ import { useState } from "react";
 import { PROJECTS_INFO, SANS, SERIF } from "@/utils/constants";
 import PageTitle from "@/components/PageTitle";
 
-const CATEGORIES = ["All", "Research", "Team", "Patent"];
+const CATEGORIES = ["All", "Design", "Labs", "Patent"];
 
 function renderBold(text) {
   return text.split(/(\*\*[^*]+\*\*)/).map((part, i) =>

@@ -57,7 +57,7 @@ export default function Main() {
             className={`${SERIF.className} font-medium text-[clamp(2.15rem,4.8vw,3.4rem)] leading-[1.12] tracking-[-0.005em] text-(--primary-text) anim-lift`}
             style={{ "--d": "0.07s", fontOpticalSizing: "auto" }}
           >
-            Rocket nozzles, memory systems, and carefully made sentences.
+            Spacecraft requirements, test data, and carefully made sentences.
           </h1>
 
           <p

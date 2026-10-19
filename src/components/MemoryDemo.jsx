@@ -13,12 +13,12 @@ import { SANS, SERIF } from "@/utils/constants";
  * auto-cycling is disabled under prefers-reduced-motion.
  */
 const MEMORY_QA = [
-  { q: "What's Nathan working on this summer?", a: "A cold gas nozzle experiment: design and test planning." },
-  { q: "Where does he study?", a: "Embry-Riddle Aeronautical University, astronautics track, class of 2027." },
-  { q: "What's the AI work?", a: "Evaluating AI tools and building prototypes at EPI-USE America." },
-  { q: "Did the submarine cooling work?", a: "AMRA's internal temps dropped 60°F+ on a minimal-cost design." },
+  { q: "What's Nathan working on now?", a: "Integration on Project SENTINEL, a 3U CubeSat that catalogs objects in the GEO belt." },
+  { q: "Where does he study?", a: "Embry-Riddle Aeronautical University, astronautics concentration, class of 2027." },
+  { q: "What came out of the AI internship?", a: "A procurement scraper at EPI-USE America that found 5× more opportunities." },
+  { q: "Did the submarine cooling work?", a: "It cut the ~190°F hull peak by over 60°F." },
   { q: "Does he actually write?", a: "Essays, short stories, and poems, all written by hand, in Musings." },
-  { q: "What's he reading?", a: "Schaub, Analytical Mechanics of Space Systems." },
+  { q: "What role is he looking for?", a: "Entry-level systems engineering, graduating May 2027." },
 ];
 
 const ANSWER_AT = 1900;   // pulse arrival — answer appears

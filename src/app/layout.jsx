@@ -10,7 +10,7 @@ export const metadata = {
     default: "Nathan Houck",
     template: "%s — Nathan Houck",
   },
-  description: "Aerospace engineering student at Embry-Riddle working on rocket propulsion, AI systems, and essays written by hand.",
+  description: "Aerospace engineering senior at Embry-Riddle: CubeSat integration and requirements, structures and aerodynamics testing, and essays written by hand.",
   manifest: "/favicon-assets/manifest.webmanifest",
   icons: {
     icon: [

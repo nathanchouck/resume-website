@@ -8,7 +8,7 @@ import { CV_PDF, RESUME_PDF, SANS } from "@/utils/constants";
 
 export const metadata = {
   title: "Résumé",
-  description: "Work experience and education for Nathan Houck: AI intern at EPI-USE America, aerodynamics grader at Embry-Riddle, B.S. Aerospace Engineering.",
+  description: "Résumé for Nathan Houck: AI Exploration Intern at EPI-USE America, aerodynamics grading assistant at Embry-Riddle, B.S. Aerospace Engineering '27.",
   alternates: { canonical: "https://nathanhouck.com/resume" },
   openGraph: {
     title: "Résumé — Nathan Houck",

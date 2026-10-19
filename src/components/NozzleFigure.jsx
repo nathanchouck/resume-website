@@ -17,7 +17,7 @@ export default function NozzleFigure({ className = "", variant = "figure" }) {
       viewBox="0 0 920 300"
       role={bg ? undefined : "img"}
       aria-hidden={bg ? "true" : undefined}
-      aria-label={bg ? undefined : "Cross-section line drawing of a converging–diverging cold gas nozzle with animated streamlines: flow enters the chamber on the left, chokes at the throat where Mach equals one, and expands through the bell to a supersonic exit."}
+      aria-label={bg ? undefined : "Cross-section line drawing of a converging–diverging nozzle with animated streamlines: flow enters the chamber on the left, chokes at the throat where Mach equals one, and expands through the bell to a supersonic exit."}
       className={`${MONO.className} ${className}`}
       fill="none"
     >

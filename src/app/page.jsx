@@ -11,7 +11,14 @@ const personJsonLd = {
   url: "https://nathanhouck.com",
   image: "https://nathanhouck.com/headshot-1024x1024.jpg",
   description:
-    "Aerospace engineering student at Embry-Riddle working on rocket propulsion, AI systems, and essays written by hand.",
+    "Aerospace engineering senior at Embry-Riddle: CubeSat integration and requirements, structures and aerodynamics testing, and essays written by hand.",
+  knowsAbout: [
+    "Systems engineering",
+    "Requirements engineering",
+    "Spacecraft design",
+    "Wind tunnel testing",
+    "Structural testing",
+  ],
   affiliation: {
     "@type": "CollegeOrUniversity",
     name: "Embry-Riddle Aeronautical University",

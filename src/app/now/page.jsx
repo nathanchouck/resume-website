@@ -2,29 +2,36 @@ import PageWrapper from "@/components/PageWrapper";
 import PageTitle from "@/components/PageTitle";
 import { SANS, SERIF } from "@/utils/constants";
 
-const UPDATED = "May 2026";
+const UPDATED = "October 2026";
 
 const SECTIONS = [
   {
-    label: "Researching",
-    heading: "AI tools in engineering workflows",
+    label: "Integrating",
+    heading: "Project SENTINEL — Senior Spacecraft Design",
     paragraphs: [
-      "This summer I'm at EPI-USE America as an AI Exploration Intern, where I evaluate AI tools across their practice areas. The work is hands-on: testing tools, building lightweight prototypes, and writing recommendation briefs for practice leaders. It's an unusual internship role: less \"ship the feature\" and more \"figure out what's actually useful here,\" which requires a more skeptical eye than most software work.",
-      "I'm particularly interested in how AI fits inside engineering workflows specifically, not productivity software in general. The design-analyze-test loop in aerospace has different constraints than text-based knowledge work, and most existing AI tooling doesn't reflect that yet. I don't have a clean answer, which is the point of the summer.",
+      "I'm the integration engineer on Project SENTINEL, a 3U CubeSat designed to autonomously catalog resident space objects in the GEO belt. I coordinate five subteams, wrote the CONOPS from the mission needs document, and I'm deriving requirements from both ahead of our System Requirements Review.",
     ],
   },
   {
-    label: "Grading",
-    heading: "AE319 Aerodynamics, Embry-Riddle",
+    label: "Testing",
+    heading: "Aerospace Structures and Instrumentation Lab — AE 416/417",
     paragraphs: [
-      "I grade and provide written feedback on homework for AE319 Aerodynamics. It's my second semester doing this. Grading something forces a cleaner kind of understanding than studying does. You notice quickly which concepts you actually know versus which ones you just pattern-matched through enough problem sets to pass the exam. It helps reinforce the concepts I learned over a year ago.",
+      "I'm installing strain gages on test specimens and checking our static load test results against theory.",
     ],
   },
   {
-    label: "Reading",
-    heading: "Schaub & Junkins — Analytical Mechanics of Space Systems",
+    label: "Looking for",
+    heading: "An entry-level systems engineering role",
     paragraphs: [
-      "I'm working through this for my Spacecraft Attitude Dynamics coursework. It is so interesting; spacecraft rotation is a richer problem than it first appears. I find that the concepts from this book have led to a much broader understanding of physics, even with how specific this book gets. There are a lot of things I previously struggled with that now make a lot more sense.",
+      "I graduate in May 2027 with a B.S. in Aerospace Engineering, astronautics concentration, and I'm looking for an entry-level systems engineering position.",
+    ],
+  },
+  {
+    label: "Recently finished",
+    heading: "AI Exploration Intern — EPI-USE America",
+    paragraphs: [
+      "From May to September I was an AI Exploration Intern at EPI-USE America. I compared build-versus-buy options for software and wrote recommendation briefs that practice leaders used to make decisions, built a Python tool that scrapes public procurement portals and found 5× more relevant opportunities, and built an AWS workflow that scores a proposal request requirement by requirement.",
+      "I was particularly interested in how AI fits inside engineering workflows specifically, not productivity software in general. The design-analyze-test loop in aerospace has different constraints than text-based knowledge work, and most existing AI tooling doesn't reflect that yet.",
     ],
   },
 ];

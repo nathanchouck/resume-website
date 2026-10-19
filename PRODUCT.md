@@ -10,24 +10,26 @@ web
 
 ## Users
 
-Primary: aerospace industry recruiters and hiring engineers evaluating Nathan for internships and early-career roles. They arrive with a résumé-scanner's patience and leave with either a download or nothing.
+Primary: aerospace and defense recruiters and hiring engineers filling entry-level systems engineering roles (Nathan graduates May 2027). They arrive with a résumé-scanner's patience and leave with either a download or nothing.
 
 Secondary: readers who come for the writing — the Musings essays, stories, and poems. The site should reward them, not just tolerate them; the writing is part of the case, not a side room.
 
 ## Product Purpose
 
-nathanhouck.com is Nathan Houck's personal portfolio: an aerospace engineering student at Embry-Riddle (Astronautics concentration, class of 2027) presenting his work, trajectory, and writing. The content story is shifting: away from the wind-tunnel / experimental-aerodynamics framing, toward the space side — rocket propulsion and nozzle theory (a cold gas nozzle experiment is underway in summer 2026) — alongside substantial work on agentic AI memory systems, and the writing. Success is a recruiter downloading the résumé because the depth and trajectory convinced them, and a reader remembering who made this.
+nathanhouck.com is Nathan Houck's personal portfolio: an aerospace engineering senior at Embry-Riddle (Astronautics concentration, graduating May 2027) seeking an entry-level systems engineering position. Since October 2026 the content story leads with systems engineering: he is the integration engineer on Project SENTINEL (senior spacecraft design, a 3U CubeSat cataloging RSOs in the GEO belt), coordinating five subteams, writing the CONOPS, and deriving requirements ahead of SRR. Test and measurement work (AE 314/315 supersonic nozzle and wind tunnel labs, AE 416/417 strain-gage structures lab, PCM research with ITA in Brazil) and the RoboSub thermal trade study are the supporting evidence. The writing remains a first-class pillar. Success is a recruiter downloading the résumé because the depth and trajectory convinced them, and a reader remembering who made this.
+
+(History: July 2026 positioning led with rocket propulsion + agentic AI memory systems + writing. Superseded October 2026 when Nathan's résumé shifted to systems engineering; the cold gas nozzle project was dropped.)
 
 ## Positioning
 
-An aerospace student working on rocket propulsion who also builds AI memory systems and publishes real essays — the range is the claim. Every page should reinforce that these three crafts belong to one careful person.
+An aerospace engineer who integrates whole systems — requirements, interfaces, and test data — and writes as carefully as he builds. The range still matters (spacecraft, structures, thermal, AI tooling, essays), but now as evidence of a systems thinker who can hold all of a design in his head, not as three separate crafts.
 
 ## Conversion & proof
 
 - Primary CTA: Download résumé (filled, unambiguous). Secondary: email as a quiet text link — no forced choice between two equal buttons.
 - The line a visitor remembers after 10 seconds: "An engineer who writes as carefully as he builds."
-- Belief ladder: (1) This student has real propulsion depth for an undergrad. (2) His trajectory — space plus AI — matches where the industry is going. (3) He would fit my team now.
-- Proof on hand: deferred by Nathan's request (July 2026). The cold gas nozzle experiment and the EPI-USE AI internship are producing proof this summer; collect artifacts into `.impeccable/assets/proof/` when ready. Until then, specificity in copy (temperatures, part counts, airfoil designations) carries the proof burden.
+- Belief ladder: (1) He already does real systems engineering work: CONOPS, requirements derivation, coordinating five subteams toward an SRR. (2) He has hands-on test and measurement depth behind it (16 pressure readings vs. Schlieren, strain gages, a 60°F+ thermal result). (3) He would fit my systems team now.
+- Proof on hand: SENTINEL artifacts (CONOPS, requirements, SRR material) are the strongest proof to collect into `.impeccable/assets/proof/` when shareable. Until then, specificity in copy (subteam counts, pressure-reading counts, temperatures, airfoil designations) carries the proof burden.
 
 ## Brand Personality
 
