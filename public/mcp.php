@@ -49,7 +49,8 @@ function rpc_error($id, int $code, string $message, int $status = 200, $data = n
 }
 
 function rpc_result($id, array $result): void {
-  send(200, ['jsonrpc' => '2.0', 'id' => $id, 'result' => $result]);
+  // An empty PHP array encodes as JSON [], but a result must be an object (e.g. ping → {}).
+  send(200, ['jsonrpc' => '2.0', 'id' => $id, 'result' => $result === [] ? new stdClass() : $result]);
 }
 
 function header_value(string $name): ?string {
