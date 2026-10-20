@@ -28,3 +28,10 @@
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# MCP endpoint: /mcp (with or without a trailing slash) runs mcp.php directly.
+# An internal rewrite, not a redirect -- redirects would turn POSTs into GETs.
+RewriteRule ^mcp/?$ mcp.php [L,QSA]
+
+# The build-time data behind /mcp is read from disk by mcp.php, not served.
+RewriteRule ^mcp-data(/|$) - [F,L]

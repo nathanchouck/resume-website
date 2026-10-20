@@ -1,40 +1,11 @@
 import PageWrapper from "@/components/PageWrapper";
 import PageTitle from "@/components/PageTitle";
 import { SANS, SERIF } from "@/utils/constants";
+// Shared with the AI layer (llms.txt and /mcp) — edit the Now log there.
+import NOW from "@/data/now.json";
 
-const UPDATED = "October 2026";
-
-const SECTIONS = [
-  {
-    label: "Integrating",
-    heading: "Project SENTINEL — Senior Spacecraft Design",
-    paragraphs: [
-      "I'm the integration engineer on Project SENTINEL, a 3U CubeSat designed to autonomously catalog resident space objects in the GEO belt. I coordinate five subteams, wrote the CONOPS from the mission needs document, and I'm deriving requirements from both ahead of our System Requirements Review.",
-    ],
-  },
-  {
-    label: "Testing",
-    heading: "Aerospace Structures and Instrumentation Lab — AE 416/417",
-    paragraphs: [
-      "I'm installing strain gages on test specimens and checking our static load test results against theory.",
-    ],
-  },
-  {
-    label: "Looking for",
-    heading: "An entry-level systems engineering role",
-    paragraphs: [
-      "I graduate in May 2027 with a B.S. in Aerospace Engineering, astronautics concentration, and I'm looking for an entry-level systems engineering position.",
-    ],
-  },
-  {
-    label: "Recently finished",
-    heading: "AI Exploration Intern — EPI-USE America",
-    paragraphs: [
-      "From May to September I was an AI Exploration Intern at EPI-USE America. I compared build-versus-buy options for software and wrote recommendation briefs that practice leaders used to make decisions, built a Python tool that scrapes public procurement portals and found 5× more relevant opportunities, and built an AWS workflow that scores a proposal request requirement by requirement.",
-      "I was particularly interested in how AI fits inside engineering workflows specifically, not productivity software in general. The design-analyze-test loop in aerospace has different constraints than text-based knowledge work, and most existing AI tooling doesn't reflect that yet.",
-    ],
-  },
-];
+const UPDATED = NOW.updated;
+const SECTIONS = NOW.sections;
 
 export default function NowPage() {
   return (

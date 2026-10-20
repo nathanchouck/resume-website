@@ -363,6 +363,8 @@ let notesWritten = 0;
 let unresolvedLinkCount = 0;
 let coversCopied = 0;
 const mathErrors = []; // { id, tex } for each formula KaTeX flagged as invalid
+const aiNotes = []; // markdown corpus for AI consumers
+const SITE_URL = 'https://nathanhouck.com';
 
 const WIKILINK_RE = /\[\[([^\]|]+)(\|([^\]]+))?\]\]/g;
 const EMBED_LINE_RE = /^!\[\[.*\]\]\s*$/gm;
@@ -383,6 +385,19 @@ for (const record of records.values()) {
     lines.splice(firstIdx, 1);
   }
   body = lines.join('\n');
+
+  // Markdown twin for AI consumers (llms.txt, the /mcp endpoint): keeps the
+  // LaTeX source and turns wiki-links into absolute markdown links.
+  const md = body
+    .replace(WIKILINK_RE, (_match, rawTarget, _pipe, rawLabel) => {
+      const target = rawTarget.trim();
+      const label = rawLabel ? rawLabel.trim() : null;
+      const targetNode = publishedMap.get(target);
+      if (!targetNode) return label || target;
+      return `[${label || targetNode.title}](${SITE_URL}/notebook/n/${target}/)`;
+    })
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 
   // Resolve wiki-links.
   body = body.replace(WIKILINK_RE, (_match, rawTarget, _pipe, rawLabel) => {
@@ -450,7 +465,28 @@ for (const record of records.values()) {
 
   fs.writeFileSync(path.join(notesDir, `${record.id}.json`), JSON.stringify(noteOut, null, 2));
   notesWritten++;
+
+  aiNotes.push({
+    id: record.id,
+    title: record.title,
+    type: record.type,
+    tags: noteOut.tags,
+    lastReviewed,
+    url: `${SITE_URL}/notebook/n/${record.id}/`,
+    links: links.map((l) => l.id),
+    backlinks: backlinks.map((l) => l.id),
+    md,
+  });
 }
+
+// AI-facing notes corpus, read by scripts/build-ai-index.mjs and public/mcp.php.
+const aiDataDir = path.join(repoRoot, 'public', 'mcp-data');
+fs.mkdirSync(aiDataDir, { recursive: true });
+aiNotes.sort((a, b) => a.title.localeCompare(b.title));
+fs.writeFileSync(
+  path.join(aiDataDir, 'notes.json'),
+  JSON.stringify({ generated: new Date().toISOString(), notes: aiNotes })
+);
 
 // ---------------------------------------------------------------------------
 // 7. Summary

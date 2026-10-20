@@ -52,3 +52,8 @@ NATHAN_CONTEXT.md
 # notebook: generated from the second-brain export at build time
 /src/data/notebook-graph.json
 /public/notebook/
+
+# AI layer: generated at build time by scripts/build-ai-index.mjs
+/public/mcp-data/
+/public/llms.txt
+/public/llms-full.txt

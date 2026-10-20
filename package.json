@@ -5,11 +5,11 @@
   "browserslist": ["chrome 111", "edge 111", "firefox 111", "safari 16.4"],
   "scripts": {
     "dev": "next dev --turbo",
-    "prebuild": "node scripts/build-notebook.mjs",
+    "prebuild": "node scripts/build-notebook.mjs && node scripts/build-ai-index.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "notebook": "node scripts/build-notebook.mjs"
+    "notebook": "node scripts/build-notebook.mjs && node scripts/build-ai-index.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
